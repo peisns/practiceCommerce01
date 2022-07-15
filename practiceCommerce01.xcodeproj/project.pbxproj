@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		35AFEB55287D8822002F92A6 /* signUpTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = signUpTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35AFEB55287D8822002F92A6 /* practiceCommerce01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = practiceCommerce01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35AFEB58287D8822002F92A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35AFEB5A287D8822002F92A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		35AFEB5C287D8822002F92A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		35AFEB56287D8822002F92A6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				35AFEB55287D8822002F92A6 /* signUpTest.app */,
+				35AFEB55287D8822002F92A6 /* practiceCommerce01.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,9 +70,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		35AFEB54287D8822002F92A6 /* signUpTest */ = {
+		35AFEB54287D8822002F92A6 /* practiceCommerce01 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 35AFEB69287D8823002F92A6 /* Build configuration list for PBXNativeTarget "signUpTest" */;
+			buildConfigurationList = 35AFEB69287D8823002F92A6 /* Build configuration list for PBXNativeTarget "practiceCommerce01" */;
 			buildPhases = (
 				35AFEB51287D8822002F92A6 /* Sources */,
 				35AFEB52287D8822002F92A6 /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = signUpTest;
+			name = practiceCommerce01;
 			productName = signUpTest;
-			productReference = 35AFEB55287D8822002F92A6 /* signUpTest.app */;
+			productReference = 35AFEB55287D8822002F92A6 /* practiceCommerce01.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -115,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				35AFEB54287D8822002F92A6 /* signUpTest */,
+				35AFEB54287D8822002F92A6 /* practiceCommerce01 */,
 			);
 		};
 /* End PBXProject section */
@@ -288,7 +288,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = signUpTest/Info.plist;
+				INFOPLIST_FILE = practiceCommerce01/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = practiceCommerce01;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -319,7 +319,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = signUpTest/Info.plist;
+				INFOPLIST_FILE = practiceCommerce01/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = practiceCommerce01;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -354,7 +354,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		35AFEB69287D8823002F92A6 /* Build configuration list for PBXNativeTarget "signUpTest" */ = {
+		35AFEB69287D8823002F92A6 /* Build configuration list for PBXNativeTarget "practiceCommerce01" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				35AFEB6A287D8823002F92A6 /* Debug */,
