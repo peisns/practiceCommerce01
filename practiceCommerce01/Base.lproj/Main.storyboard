@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="iL3-2K-cpv">
-                                <rect key="frame" x="44" y="88" width="326" height="700.5"/>
+                                <rect key="frame" x="44" y="88" width="326" height="724.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OVl-KU-B64">
                                         <rect key="frame" x="0.0" y="0.0" width="326" height="86.5"/>
@@ -33,6 +33,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="idTextFieldTyped:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="MM6-EE-rYd"/>
                                                     <action selector="idTextFieldTyped:" destination="BYZ-38-t0r" eventType="editingChanged" id="k4i-of-oaw"/>
                                                     <action selector="idTextFieldTyped:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="wHm-C3-iTa"/>
                                                     <action selector="idTextFieldTyped:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="xQr-uj-Vdz"/>
@@ -66,6 +67,7 @@
                                                 <connections>
                                                     <action selector="passwordTextFieldTyped:" destination="BYZ-38-t0r" eventType="editingChanged" id="J96-Gs-dos"/>
                                                     <action selector="passwordTextFieldTyped:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="JOf-Sa-6qk"/>
+                                                    <action selector="passwordTextFieldTyped:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="wvZ-5W-xdg"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호가 입력되지 않았습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYQ-jQ-Dzy">
@@ -107,7 +109,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xTh-7x-Azu">
-                                        <rect key="frame" x="0.0" y="304.5" width="326" height="62.5"/>
+                                        <rect key="frame" x="0.0" y="304.5" width="326" height="86.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대폰번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRn-Ua-lvs">
                                                 <rect key="frame" x="0.0" y="0.0" width="326" height="20.5"/>
@@ -132,10 +134,16 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴대폰번호가 입력되지 않았습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMx-5Q-le8" userLabel="휴대폰번호가 입력되지 않았습니다">
+                                                <rect key="frame" x="0.0" y="70.5" width="326" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xPb-O0-tkX">
-                                        <rect key="frame" x="0.0" y="382" width="326" height="86.5"/>
+                                        <rect key="frame" x="0.0" y="406" width="326" height="86.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcN-zj-Dd8">
                                                 <rect key="frame" x="0.0" y="0.0" width="59" height="20.5"/>
@@ -143,11 +151,23 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="15M-Cz-Ry9">
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uez-Sv-7pn">
                                                 <rect key="frame" x="0.0" y="28.5" width="326" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="15M-Cz-Ry9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="269.5" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1O-OI-DM0">
+                                                        <rect key="frame" x="277.5" y="0.0" width="48.5" height="31"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="인증">
+                                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증이 완료되지 않았습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ta4-Z0-Hyh">
                                                 <rect key="frame" x="0.0" y="70.5" width="146" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -156,12 +176,12 @@
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="15M-Cz-Ry9" firstAttribute="leading" secondItem="xPb-O0-tkX" secondAttribute="leading" id="93a-cE-z1y"/>
-                                            <constraint firstAttribute="trailing" secondItem="15M-Cz-Ry9" secondAttribute="trailing" id="kmI-Wh-W95"/>
+                                            <constraint firstAttribute="trailing" secondItem="Uez-Sv-7pn" secondAttribute="trailing" id="O6g-hl-ETL"/>
+                                            <constraint firstItem="Uez-Sv-7pn" firstAttribute="leading" secondItem="xPb-O0-tkX" secondAttribute="leading" id="Xk2-9R-MfF"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4IJ-Ve-RLv">
-                                        <rect key="frame" x="0.0" y="483.5" width="326" height="171"/>
+                                        <rect key="frame" x="0.0" y="507.5" width="326" height="171"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lg-wj-cTy">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="31"/>
@@ -299,7 +319,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSh-tf-YXV">
-                                        <rect key="frame" x="0.0" y="669.5" width="326" height="31"/>
+                                        <rect key="frame" x="0.0" y="693.5" width="326" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="가입하기">
                                             <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -331,12 +351,21 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="GG4-7K-Unt" id="7NM-Og-cAw"/>
+                        <outlet property="emailTextFieldDescription" destination="uJ6-wM-lv9" id="6ac-fp-ga5"/>
                         <outlet property="idTextField" destination="ydM-Ih-c34" id="RzC-u2-HTP"/>
                         <outlet property="idTextFieldDescription" destination="bCf-nA-wbx" id="AGa-c6-aun"/>
+                        <outlet property="passwordTextField" destination="5YD-MY-xtY" id="wlE-RK-pMP"/>
+                        <outlet property="passwordTextFieldDescription" destination="DYQ-jQ-Dzy" id="n5g-Vw-urr"/>
+                        <outlet property="phoneNumberCheckTextField" destination="15M-Cz-Ry9" id="Sv2-vk-Qj4"/>
+                        <outlet property="phoneNumberCheckTextFieldDescription" destination="ta4-Z0-Hyh" id="ZxQ-J2-HZA"/>
+                        <outlet property="phoneNumberTextField" destination="k3D-gZ-13W" id="p1s-M1-P03"/>
+                        <outlet property="phoneNumberTextFieldDescription" destination="xMx-5Q-le8" id="DPU-nP-WT3"/>
                         <outletCollection property="defaultHiddenCollection" destination="bCf-nA-wbx" collectionClass="NSMutableArray" id="rjy-jN-3ky"/>
                         <outletCollection property="defaultHiddenCollection" destination="DYQ-jQ-Dzy" collectionClass="NSMutableArray" id="bw4-YU-9cw"/>
                         <outletCollection property="defaultHiddenCollection" destination="uJ6-wM-lv9" collectionClass="NSMutableArray" id="ENe-uv-hrO"/>
                         <outletCollection property="defaultHiddenCollection" destination="ta4-Z0-Hyh" collectionClass="NSMutableArray" id="Ccs-mX-Bsd"/>
+                        <outletCollection property="defaultHiddenCollection" destination="xMx-5Q-le8" collectionClass="NSMutableArray" id="yQO-hB-e2r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
