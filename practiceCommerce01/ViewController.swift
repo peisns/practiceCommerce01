@@ -90,19 +90,18 @@ class ViewController: UIViewController {
         default:
             passwordTextFieldDescription.text = "비밀번호는 16글자 이하이어야 합니다."
         }
-        
-
-
-        
-        
-        
-        
-        
-        
     }
     
+    @IBAction func emailTextFieldTyped(_ sender: UITextField) {
+        emailTextFieldDescription.isHidden = false
+    }
     
+    @IBAction func phoneTextFieldTyped(_ sender: UITextField) {
+        phoneNumberTextFieldDescription.isHidden = false
+    }
     
+    @IBAction func phoneNumberCheckTextFieldTyped(_ sender: UITextField) {
+    }
     
 }
 
