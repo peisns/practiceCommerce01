@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         case 1..<minCount:
             passwordTextFieldDescription.text = "비밀번호는 8글자 이상이어야 합니다."
         case minCount...maxCount:
-            let idPattern = "^[a-z0-9-_]{\(minCount),\(maxCount)}$"
+            let idPattern = #"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{\#(minCount),\#(maxCount)}$"#
             let isVaildPattern = (passwordTextField.text!.range(of: idPattern, options: .regularExpression) != nil)
             if isVaildPattern {
                 passwordTextFieldDescription.text = "조건에 맞는 비밀번호"
@@ -96,27 +96,23 @@ class ViewController: UIViewController {
         emailTextFieldDescription.isHidden = false
         
         let minCount = 5
-        let maxCount = 50
+        let maxCount = 64
         let count = emailTextField.text!.count
+        let idPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let isVaildPattern = (emailTextField.text!.range(of: idPattern, options: .regularExpression) != nil)
 
-        switch count {
-        case 0:
+        
+        if count == 0 {
             emailTextFieldDescription.text = "이메일은 필수입력 정보입니다."
-        case 1..<minCount:
-            emailTextFieldDescription.text = "올바르지 않은 이메일형식입니다."
-        case minCount...maxCount:
-            let idPattern = "^[a-z0-9-_]{\(minCount),\(maxCount)}$"
-            let isVaildPattern = (passwordTextField.text!.range(of: idPattern, options: .regularExpression) != nil)
-            if isVaildPattern {
-                passwordTextFieldDescription.text = "조건에 맞는 비밀번호"
-                passwordTextFieldDescription.isHidden = true
-            } else {
-                passwordTextFieldDescription.text = "영어알파벳, 숫자, 특수문자가 필수로 입력되어야 합니다."
-            }
-        default:
-            passwordTextFieldDescription.text = "비밀번호는 16글자 이하이어야 합니다."
-    }
+        } else if isVaildPattern {
+            emailTextFieldDescription.text = "조건에 맞는 이메일"
+            emailTextFieldDescription.isHidden = true
+        } else {
+            emailTextFieldDescription.text = "올바르지 않은 이메일 형식입니다."
+        }
     
+    }
+        
     @IBAction func phoneTextFieldTyped(_ sender: UITextField) {
         phoneNumberTextFieldDescription.isHidden = false
     }
@@ -126,4 +122,5 @@ class ViewController: UIViewController {
     }
     
 }
+    
 
