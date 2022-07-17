@@ -75,7 +75,7 @@ class ViewController: UIViewController {
 
         switch count {
         case 0:
-            passwordTextFieldDescription.text = "비밀번호는는 필수입력 정보입니다."
+            passwordTextFieldDescription.text = "비밀번호는 필수입력 정보입니다."
         case 1..<minCount:
             passwordTextFieldDescription.text = "비밀번호는 8글자 이상이어야 합니다."
         case minCount...maxCount:
@@ -94,6 +94,27 @@ class ViewController: UIViewController {
     
     @IBAction func emailTextFieldTyped(_ sender: UITextField) {
         emailTextFieldDescription.isHidden = false
+        
+        let minCount = 5
+        let maxCount = 50
+        let count = emailTextField.text!.count
+
+        switch count {
+        case 0:
+            emailTextFieldDescription.text = "이메일은 필수입력 정보입니다."
+        case 1..<minCount:
+            emailTextFieldDescription.text = "올바르지 않은 이메일형식입니다."
+        case minCount...maxCount:
+            let idPattern = "^[a-z0-9-_]{\(minCount),\(maxCount)}$"
+            let isVaildPattern = (passwordTextField.text!.range(of: idPattern, options: .regularExpression) != nil)
+            if isVaildPattern {
+                passwordTextFieldDescription.text = "조건에 맞는 비밀번호"
+                passwordTextFieldDescription.isHidden = true
+            } else {
+                passwordTextFieldDescription.text = "영어알파벳, 숫자, 특수문자가 필수로 입력되어야 합니다."
+            }
+        default:
+            passwordTextFieldDescription.text = "비밀번호는 16글자 이하이어야 합니다."
     }
     
     @IBAction func phoneTextFieldTyped(_ sender: UITextField) {
@@ -101,6 +122,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func phoneNumberCheckTextFieldTyped(_ sender: UITextField) {
+        phoneNumberCheckTextFieldDescription.isHidden = false
     }
     
 }
