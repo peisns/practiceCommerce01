@@ -26,7 +26,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var phoneNumberView: UIStackView!
     @IBOutlet weak var phoneNumberCheckTextField: UITextField!
+    @IBOutlet weak var phoneNumberCheckButton: UIButton!
     @IBOutlet weak var phoneNumberCheckTextFieldDescription: UILabel!
+    
+    @IBOutlet weak var personalInfoButton: UIButton!
+    @IBOutlet weak var termAndConditionButton: UIButton!
+    @IBOutlet weak var minorCheckButton: UIButton!
+    @IBOutlet weak var marketingAgreementButton: UIButton!
+    
+    
+    
     
     
     override func viewDidLoad() {
@@ -161,17 +170,40 @@ class ViewController: UIViewController {
         if rightNumberCount.contains(convertDigit.count) {
             phoneNumberView.isHidden = false
             phoneNumberButton.setTitle("재전송", for: .normal)
+            UserDefaults.standard.set("123456", forKey: "userPassword")
         } else {
-            wrongPhoneNumberAlert()
+            wrongCaseAlert(title: "알림", message: "올바르지 않은 휴대폰 번호입니다")
         }
     }
     
-    func wrongPhoneNumberAlert() {
-        let alert = UIAlertController(title: "알림", message: "올바르지 않은 휴대폰 번호 형식입니다.", preferredStyle: .alert)
+    func wrongCaseAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let check = UIAlertAction(title: "확인", style: .destructive, handler: nil)
             alert.addAction(check)
             present(alert, animated: true, completion: nil)
         }
+    
+    @IBAction func phoneNumberCheckButtonClicked(_ sender: UIButton) {
+        let text = phoneNumberCheckTextField.text!
+        if text.count != 6  {
+            wrongCaseAlert(title: "알림", message: "인증번호는 6자리 숫자입니다")
+        } else if text == UserDefaults.standard.string(forKey: "userPassword") {
+            phoneNumberCheckButton.setTitle("인증완료", for: .normal)
+            phoneNumberCheckButton.isEnabled = false
+            phoneNumberCheckTextField.isEnabled = false
+        } else {
+            wrongCaseAlert(title: "알림", message: "올바르지 않은 인증번호 입니다")
+        }
+    }
+    
+    @IBAction func allAgreementButtonClicked(_ sender: UIButton) {
+        personalInfoButton.isSelected = true
+        termAndConditionButton.isSelected = true
+        minorCheckButton.isSelected = true
+        marketingAgreementButton.isSelected = true
+    }
+    
+    
 }
     
 

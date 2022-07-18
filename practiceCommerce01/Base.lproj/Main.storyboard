@@ -12,7 +12,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="practiceCommerce01" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Main" customClass="하지만">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Main">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -60,7 +60,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5YD-MY-xtY">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="알파벳, 숫자, 특수문자 필수 8-16자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5YD-MY-xtY">
                                                 <rect key="frame" x="0.0" y="28.5" width="326" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -184,6 +184,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="인증">
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="phoneNumberCheckButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ni-ax-CuD"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -208,6 +211,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" image="checkmark.square" catalog="system" title="약관 전체 동의하기">
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="allAgreementButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Red-Jx-0vm"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bio-fz-u5m">
                                                 <rect key="frame" x="0.0" y="46" width="326" height="20"/>
@@ -223,7 +229,7 @@
                                                             <color key="baseForegroundColor" systemColor="systemGray2Color"/>
                                                         </buttonConfiguration>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anj-91-G4b">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anj-91-G4b">
                                                         <rect key="frame" x="0.0" y="0.0" width="220" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="2GM-TI-mwS"/>
@@ -374,14 +380,19 @@
                         <outlet property="emailTextFieldDescription" destination="uJ6-wM-lv9" id="6ac-fp-ga5"/>
                         <outlet property="idTextField" destination="ydM-Ih-c34" id="RzC-u2-HTP"/>
                         <outlet property="idTextFieldDescription" destination="bCf-nA-wbx" id="AGa-c6-aun"/>
+                        <outlet property="marketingAgreementButton" destination="BzD-Po-2fc" id="Mkd-6U-As4"/>
+                        <outlet property="minorCheckButton" destination="X2S-vq-M4O" id="LIM-8W-ohS"/>
                         <outlet property="passwordTextField" destination="5YD-MY-xtY" id="wlE-RK-pMP"/>
                         <outlet property="passwordTextFieldDescription" destination="DYQ-jQ-Dzy" id="n5g-Vw-urr"/>
+                        <outlet property="personalInfoButton" destination="anj-91-G4b" id="gy3-Y7-vW4"/>
                         <outlet property="phoneNumberButton" destination="VhP-yQ-ZYQ" id="7IU-lA-uqK"/>
+                        <outlet property="phoneNumberCheckButton" destination="I1O-OI-DM0" id="GMg-Sq-bbU"/>
                         <outlet property="phoneNumberCheckTextField" destination="15M-Cz-Ry9" id="Sv2-vk-Qj4"/>
                         <outlet property="phoneNumberCheckTextFieldDescription" destination="ta4-Z0-Hyh" id="ZxQ-J2-HZA"/>
                         <outlet property="phoneNumberTextField" destination="k3D-gZ-13W" id="p1s-M1-P03"/>
                         <outlet property="phoneNumberTextFieldDescription" destination="xMx-5Q-le8" id="DPU-nP-WT3"/>
                         <outlet property="phoneNumberView" destination="xPb-O0-tkX" id="boP-zj-Afz"/>
+                        <outlet property="termAndConditionButton" destination="hBx-A0-yH7" id="wQT-eQ-XAG"/>
                         <outletCollection property="defaultHiddenCollection" destination="bCf-nA-wbx" collectionClass="NSMutableArray" id="rjy-jN-3ky"/>
                         <outletCollection property="defaultHiddenCollection" destination="DYQ-jQ-Dzy" collectionClass="NSMutableArray" id="bw4-YU-9cw"/>
                         <outletCollection property="defaultHiddenCollection" destination="uJ6-wM-lv9" collectionClass="NSMutableArray" id="ENe-uv-hrO"/>
