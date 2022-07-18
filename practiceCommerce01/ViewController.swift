@@ -19,22 +19,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailTextFieldDescription: UILabel!
     
+    
     @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var phoneNumberButton: UIButton!
     @IBOutlet weak var phoneNumberTextFieldDescription: UILabel!
     
+    @IBOutlet weak var phoneNumberView: UIStackView!
     @IBOutlet weak var phoneNumberCheckTextField: UITextField!
     @IBOutlet weak var phoneNumberCheckTextFieldDescription: UILabel!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         for label in defaultHiddenCollection {
             label.isHidden = true
             label.textColor = .red
         }
-
+        
+        phoneNumberView.isHidden = true
     }
 
     @IBAction func idTextFieldTyped(_ sender: UITextField) {
@@ -112,6 +114,7 @@ class ViewController: UIViewController {
         phoneNumberTextFieldDescription.isHidden = false
         let convertDigit = phoneNumberTextField.text!.replacingOccurrences(of: #"\D"#, with: "", options: .regularExpression)
         let count = convertDigit.count
+        let rightNumberCount = [10, 11]
         switch count {
         case 0:
             phoneNumberTextFieldDescription.text = "휴대폰 번호는 필수로 입력해야합니다"
@@ -126,8 +129,12 @@ class ViewController: UIViewController {
             let endingIndex = convertDigit.index(convertDigit.startIndex, offsetBy: count-5)
             let middleNumber = convertDigit[startIndex...endingIndex]
             phoneNumberTextField.text = convertDigit.prefix(3) + "-" + middleNumber + "-" + convertDigit.suffix(4)
-            phoneNumberTextFieldDescription.text = "올바른 휴대폰 번호입니다"
-            phoneNumberTextFieldDescription.isHidden = true
+            if rightNumberCount.contains(count) {
+                phoneNumberTextFieldDescription.text = "올바른 휴대폰 번호입니다"
+                phoneNumberTextFieldDescription.isHidden = true
+            } else {
+                phoneNumberTextFieldDescription.text = "올바르지 않은 휴대폰 번호입니다"
+            }
         default:
             phoneNumberTextFieldDescription.text = "올바르지 않은 휴대폰 번호입니다"
         }
@@ -148,6 +155,23 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func phoneNumberButtonClicked(_ sender: UIButton) {
+        let rightNumberCount = [10, 11]
+        let convertDigit = phoneNumberTextField.text!.replacingOccurrences(of: #"\D"#, with: "", options: .regularExpression)
+        if rightNumberCount.contains(convertDigit.count) {
+            phoneNumberView.isHidden = false
+            phoneNumberButton.setTitle("재전송", for: .normal)
+        } else {
+            wrongPhoneNumberAlert()
+        }
+    }
+    
+    func wrongPhoneNumberAlert() {
+        let alert = UIAlertController(title: "알림", message: "올바르지 않은 휴대폰 번호 형식입니다.", preferredStyle: .alert)
+            let check = UIAlertAction(title: "확인", style: .destructive, handler: nil)
+            alert.addAction(check)
+            present(alert, animated: true, completion: nil)
+        }
 }
     
 

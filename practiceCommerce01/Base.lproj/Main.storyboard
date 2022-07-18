@@ -139,9 +139,12 @@
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhP-yQ-ZYQ">
                                                         <rect key="frame" x="277.5" y="0.0" width="48.5" height="34"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="인증">
+                                                        <buttonConfiguration key="configuration" style="plain" title="전송">
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="phoneNumberButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQc-ni-xKC"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -373,10 +376,12 @@
                         <outlet property="idTextFieldDescription" destination="bCf-nA-wbx" id="AGa-c6-aun"/>
                         <outlet property="passwordTextField" destination="5YD-MY-xtY" id="wlE-RK-pMP"/>
                         <outlet property="passwordTextFieldDescription" destination="DYQ-jQ-Dzy" id="n5g-Vw-urr"/>
+                        <outlet property="phoneNumberButton" destination="VhP-yQ-ZYQ" id="7IU-lA-uqK"/>
                         <outlet property="phoneNumberCheckTextField" destination="15M-Cz-Ry9" id="Sv2-vk-Qj4"/>
                         <outlet property="phoneNumberCheckTextFieldDescription" destination="ta4-Z0-Hyh" id="ZxQ-J2-HZA"/>
                         <outlet property="phoneNumberTextField" destination="k3D-gZ-13W" id="p1s-M1-P03"/>
                         <outlet property="phoneNumberTextFieldDescription" destination="xMx-5Q-le8" id="DPU-nP-WT3"/>
+                        <outlet property="phoneNumberView" destination="xPb-O0-tkX" id="boP-zj-Afz"/>
                         <outletCollection property="defaultHiddenCollection" destination="bCf-nA-wbx" collectionClass="NSMutableArray" id="rjy-jN-3ky"/>
                         <outletCollection property="defaultHiddenCollection" destination="DYQ-jQ-Dzy" collectionClass="NSMutableArray" id="bw4-YU-9cw"/>
                         <outletCollection property="defaultHiddenCollection" destination="uJ6-wM-lv9" collectionClass="NSMutableArray" id="ENe-uv-hrO"/>
