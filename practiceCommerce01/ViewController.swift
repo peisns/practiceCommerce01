@@ -29,14 +29,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var phoneNumberCheckButton: UIButton!
     @IBOutlet weak var phoneNumberCheckTextFieldDescription: UILabel!
     
+    @IBOutlet weak var allAgreementButton: UIButton!
     @IBOutlet weak var personalInfoButton: UIButton!
     @IBOutlet weak var termAndConditionButton: UIButton!
     @IBOutlet weak var minorCheckButton: UIButton!
     @IBOutlet weak var marketingAgreementButton: UIButton!
-    
-    
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -197,11 +195,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func allAgreementButtonClicked(_ sender: UIButton) {
-        personalInfoButton.isSelected = true
-        termAndConditionButton.isSelected = true
-        minorCheckButton.isSelected = true
-        marketingAgreementButton.isSelected = true
+        let agreementArray  = [allAgreementButton, personalInfoButton, termAndConditionButton, minorCheckButton, marketingAgreementButton]
+        
+        if sender.tag == 0 {
+            if agreementArray[0]!.isSelected {
+                for i in agreementArray {
+                    i?.isSelected = false
+                }
+            } else {
+                for i in agreementArray {
+                    i?.isSelected = true
+                }
+            }
+        } else {
+            agreementArray[sender.tag]!.isSelected = agreementArray[sender.tag]!.isSelected ? false : true
+        }
+        
     }
+    
+    
+    
     
     
 }
